@@ -37,23 +37,31 @@ class DicePage extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: ElevatedButton.icon(
+            child: OutlinedButton.icon(
               onPressed: () {},
+              style: OutlinedButton.styleFrom(
+                padding: EdgeInsets.zero,
+                shape: const CircleBorder(side: BorderSide.none),
+              ),
               icon: Image.asset(
                 'images/dice1.png',
-                width: 50,
-                height: 100,
+                width: 130,
+                height: 130,
               ),
               label: const Text(''),
             ),
           ),
           Expanded(
-            child: ElevatedButton.icon(
+            child: OutlinedButton.icon(
               onPressed: () {},
+              style: OutlinedButton.styleFrom(
+                padding: EdgeInsets.zero,
+                shape: const CircleBorder(side: BorderSide.none),
+              ),
               icon: Image.asset(
                 'images/dice2.png',
-                width: 50,
-                height: 100,
+                width: 130,
+                height: 130,
               ),
               label: const Text(''),
             ),
