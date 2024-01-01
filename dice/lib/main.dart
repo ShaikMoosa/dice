@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(const MyApp());
@@ -28,8 +29,22 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class DicePage extends StatelessWidget {
+class DicePage extends StatefulWidget {
   const DicePage({super.key});
+
+  @override
+  State<DicePage> createState() => _DicePageState();
+}
+
+class _DicePageState extends State<DicePage> {
+  int variableDart = 1;
+  int variableDart2 = 1;
+  void changeface() {
+    setState(() {
+      variableDart = Random().nextInt(6) + 1;
+      variableDart2 = Random().nextInt(6) + 1;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,13 +53,15 @@ class DicePage extends StatelessWidget {
         children: [
           Expanded(
             child: OutlinedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                changeface();
+              },
               style: OutlinedButton.styleFrom(
                 padding: EdgeInsets.zero,
                 shape: const CircleBorder(side: BorderSide.none),
               ),
               icon: Image.asset(
-                'images/dice1.png',
+                'images/dice$variableDart.png',
                 width: 130,
                 height: 130,
               ),
@@ -53,13 +70,15 @@ class DicePage extends StatelessWidget {
           ),
           Expanded(
             child: OutlinedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                changeface();
+              },
               style: OutlinedButton.styleFrom(
                 padding: EdgeInsets.zero,
                 shape: const CircleBorder(side: BorderSide.none),
               ),
               icon: Image.asset(
-                'images/dice2.png',
+                'images/dice$variableDart2.png',
                 width: 130,
                 height: 130,
               ),
